@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conceptual Studies | Accountancy & Economics Coaching (Class 11 & 12)</title>
+<meta name="description" content="Conceptual Studies offers Accountancy and Economics coaching for Class 11 & 12 with small batches, personal attention, and board-focused preparation.">
+<link rel="icon" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#f5f7fb;color:#222}
+
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 60px;background:#fff;box-shadow:0 4px 20px rgba(0,0,0,0.05);position:sticky;top:0;z-index:10}
+.logo img{height:48px}
+nav a{margin:0 8px;text-decoration:none;color:#0b5ed7;font-weight:600;padding:8px 14px;border-radius:8px;background:#eaf2ff;transition:all 0.25s ease}
+nav a:hover{background:#0b5ed7;color:#fff}
+nav a.active{background:#0b5ed7;color:#fff}
+
+.hero{display:flex;align-items:center;justify-content:center;padding:90px 60px;background:linear-gradient(135deg,#0b5ed7,#3aa0ff);color:#fff}
+.hero-inner{max-width:1000px;margin:auto;text-align:center}
+.hero-text{max-width:900px;margin:auto;text-align:center}
+.hero h1{font-size:44px;margin-bottom:10px}
+.hero-highlight{font-size:20px;font-weight:700;margin-bottom:15px}
+.hero ul{margin-top:10px;line-height:1.9}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;justify-content:center}
+
+.hero-badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);padding:6px 10px;border-radius:999px;font-size:12px}
+.hero-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.hero-feature{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:rgba(255,255,255,0.12);padding:18px;border-radius:12px}
+.hero-feature .icon{font-size:18px}
+
+
+.btn{display:inline-block;padding:12px 24px;margin-top:20px;margin-right:12px;margin-bottom:5px;background:#fff;color:#0b5ed7;border-radius:8px;text-decoration:none;font-weight:600;transition:0.3s;border:2px solid #fff}
+.btn:hover{background:#0b5ed7;color:#fff;border:2px solid #fff;transform:translateY(-2px)}
+.btn.secondary{background:transparent;border:1px solid #fff;color:#fff}
+
+.sticky-cta{position:fixed;bottom:0;left:0;width:100%;background:#0b5ed7;color:#fff;display:flex;justify-content:center;align-items:center;gap:15px;padding:12px;z-index:20}
+.sticky-cta a{background:#fff;color:#0b5ed7;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:600}
+
+section{padding:70px 60px;max-width:1150px;margin:auto}
+h2{font-size:28px;margin-bottom:10px;color:#0b5ed7}
+.section-sub{color:#666;margin-bottom:20px}
+.divider{width:60px;height:4px;background:#0b5ed7;border-radius:4px;margin:10px 0 20px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+
+.courses-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.course-card{border-top:4px solid #0b5ed7;position:relative}
+.course-tag{position:absolute;top:-12px;left:15px;background:#0b5ed7;color:#fff;padding:4px 10px;font-size:12px;border-radius:6px}
+.subject-pill{display:block;margin:0 auto 12px auto;background:#eaf2ff;color:#0b5ed7;padding:10px 16px;border-radius:999px;font-weight:700;font-size:14px;text-align:center;width:fit-content}
+
+.card{background:#fff;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.06);transition:all 0.3s ease;display:flex;flex-direction:column;justify-content:space-between}
+
+/* Fix spacing for pricing cards (especially One-to-One) */
+#pricing .card{justify-content:flex-start;gap:10px}
+#pricing .card h3{margin-bottom:6px}
+#pricing .card ul{margin-top:6px}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.12)}
+.card h3{margin-bottom:12px;color:#0b5ed7}
+.card ul{line-height:1.8;padding-left:15px}
+.icon{font-size:26px;margin-bottom:10px}
+
+.mentor{display:flex;gap:50px;align-items:flex-start;justify-content:center}
+.mentor-left{flex:0 0 300px;display:flex;justify-content:center}
+.mentor-right{flex:1;max-width:650px}
+.mentor img{width:300px;height:320px;object-fit:cover;border-radius:18px;box-shadow:0 15px 40px rgba(0,0,0,0.18)}
+
+/* Mentor badge */
+.mentor-left{position:relative}
+.mentor-badge{
+position:absolute;
+bottom:15px;
+left:15px;
+background:#0b5ed7;
+color:#fff;
+padding:8px 12px;
+border-radius:10px;
+font-size:12px;
+font-weight:600;
+box-shadow:0 6px 18px rgba(0,0,0,0.2);
+}
+.mentor-cred{font-weight:700;font-size:18px;color:#0b5ed7;margin-bottom:10px}
+.highlight{font-weight:600;color:#0b5ed7}
+
+.feature{display:flex;gap:12px;align-items:flex-start}
+.feature .icon{font-size:22px}
+
+.badge{display:inline-block;background:#eaf2ff;color:#0b5ed7;padding:4px 10px;border-radius:6px;font-size:12px;margin-bottom:8px}
+
+.cta{background:#0b5ed7;color:#fff;padding:50px;border-radius:14px;text-align:center}
+.cta h2{color:#fff}
+
+.testimonial{font-style:italic;margin:12px 0 10px;line-height:1.6}
+.testimonial-card{align-items:center;text-align:center}
+.stars{color:#f5b301;letter-spacing:2px;font-size:16px}
+.t-meta{font-size:12px;color:#666}
+.carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
+.carousel-dots span{width:8px;height:8px;border-radius:50%;background:#cbd5e1;display:inline-block;cursor:pointer}
+.carousel-dots .active{background:#0b5ed7}
+
+.carousel{position:relative;overflow:hidden}
+.carousel-track{display:flex;transition:transform 0.5s ease}
+.carousel-item{min-width:100%;padding:10px}
+.carousel-controls{display:flex;justify-content:center;margin-top:15px;gap:10px}
+.carousel-btn{background:#0b5ed7;color:#fff;border:none;padding:8px 14px;border-radius:6px;cursor:pointer}
+
+footer{background:#0b5ed7;color:#fff;text-align:center;padding:30px;margin-top:40px}
+
+.whatsapp{position:fixed;bottom:70px;right:20px;background:#25D366;color:#fff;padding:12px 16px;border-radius:50px;text-decoration:none;font-weight:600}
+
+/* Contact Section Styling */
+.contact-card{
+background:#fff;
+padding:30px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,0.06);
+max-width:600px;
+margin:auto;
+}
+
+.contact-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 0;
+}
+
+.contact-label{
+font-weight:600;
+color:#0b5ed7;
+}
+
+.contact-value{
+font-size:16px;
+color:#333;
+font-weight:500;
+}
+.contact-value a{
+color:#333;
+text-decoration:none;
+}
+.contact-value a:hover{
+color:#0b5ed7;
+}
+
+.contact-divider{
+height:1px;
+background:#eee;
+margin:10px 0;
+}
+
+@media(max-width:768px){
+.hero-features{grid-template-columns:1fr}
+.hero{flex-direction:column;text-align:center;gap:30px}
+.hero-text{text-align:center}
+header{padding:15px}
+section{padding:40px 20px}
+.mentor{flex-direction:column;align-items:center;text-align:center}
+.mentor-left{margin-bottom:15px}
+.courses-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo"><img src="logo.png"></div>
+<nav>
+<a href="#courses">Courses</a>
+<a href="#mentor">Mentor</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Strong concepts today. Confident results tomorrow.</h1>
+      <p class="hero-highlight">Master Accountancy & Economics with conceptual clarity</p>
+      <p style="margin-top:8px;font-size:14px;opacity:0.9">Trusted by students for concept clarity & board results</p>
+
+      <div class="hero-badges">
+        <span class="hero-badge">Class 11 & 12</span>
+        <span class="hero-badge">All Boards</span>
+        <span class="hero-badge">Accountancy & Economics</span>
+      </div>
+
+      <div class="hero-features">
+        <div class="hero-feature"><div><b>Conceptual Learning</b><br>Understand, not memorize</div></div>
+        <div class="hero-feature"><div><b>Small Batches</b><br>Focused attention</div></div>
+        <div class="hero-feature"><div><b>Board-Focused Approach</b><br>Exam-oriented preparation</div></div>
+        <div class="hero-feature"><div><b>Structured Teaching</b><br>Clear and systematic coverage</div></div>
+      </div>
+
+      <a class="btn" href="#contact">Book Free Demo</a>
+      <a class="btn secondary" href="#courses">Explore Courses</a>
+    </div>
+  </div>
+</section>
+
+<section id="mentor">
+<h2>Meet Your Mentor</h2>
+<div class="divider"></div>
+<div class="mentor">
+<div class="mentor-left">
+<img src="mentor.jpg">
+<div class="mentor-badge">10+ Years Experience</div>
+<div class="mentor-badge" style="bottom:55px;background:#222">NET JRF Qualified</div>
+</div>
+<div class="mentor-right">
+<h3>Komal Sejwal</h3>
+<p class="mentor-cred">PhD Scholar | NET JRF | SRF | CA Intermediate</p>
+<p>10+ years of teaching experience across school and college levels, with exposure to international teaching standards including UK-based curricula and global student interactions.</p>
+<p style="margin-top:8px;font-weight:500;color:#0b5ed7">Consistently helping students improve scores and confidence</p>
+
+<div class="grid" style="margin-top:15px">
+<div class="card">
+<span class="badge">Teaching Philosophy</span>
+<p><b>If you understand the concept, you can solve any question.</b></p>
+</div>
+<div class="card">
+<span class="badge">What sets her apart</span>
+<ul>
+<li>Deep conceptual teaching</li>
+<li>Structured preparation</li>
+<li>Focus on clarity over memorization</li>
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section>
+<h2>How Learning Happens</h2>
+<div class="divider"></div>
+<div class="grid">
+
+<div class="card">
+<h3 class="highlight">Class Structure</h3>
+<ul>
+<li><b>4</b> concept classes per week</li>
+<li>1 dedicated doubt session</li>
+<li><b>60 minutes</b> per class</li>
+<li>Total: <b>5 sessions</b> per week</li>
+<li>Max <b>10 students</b> per batch</li>
+</ul>
+</div>
+
+<div class="card">
+<h3 class="highlight">Student Experience</h3>
+<ul>
+<li>Weekly tests</li>
+<li>Regular assignments</li>
+<li>Past paper practice</li>
+<li><b>Board exam strategy</b></li>
+<li>Continuous tracking</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section id="courses">
+<h2>Courses Designed for Results</h2>
+<div class="divider"></div>
+<p class="section-sub">Complete syllabus coverage with board-focused preparation</p>
+
+<div class="courses-grid">
+
+<div class="card course-card">
+<div class="course-tag">Class 11</div>
+<div class="subject-pill">Accountancy</div>
+<ul>
+<li>Journal Entries</li>
+<li>Ledger Posting</li>
+<li>Trial Balance</li>
+<li>Financial Statements</li>
+<li>Depreciation & BRS</li>
+</ul>
+<a class="btn" href="#contact">Enroll Now</a>
+</div>
+
+<div class="card course-card">
+<div class="course-tag">Class 11</div>
+<div class="subject-pill">Economics</div>
+<ul>
+<li>Demand & Supply</li>
+<li>Consumer Behaviour</li>
+<li>Market Equilibrium</li>
+<li>Production & Cost</li>
+<li>Microeconomic Foundations</li>
+</ul>
+<a class="btn" href="#contact">Enroll Now</a>
+</div>
+
+<div class="card course-card">
+<div class="course-tag">Class 12</div>
+<div class="subject-pill">Accountancy</div>
+<ul>
+<li>Partnership Accounts</li>
+<li>Company Accounts</li>
+<li>Financial Statements</li>
+<li>Cash Flow Statements</li>
+<li>Board Exam Practice</li>
+</ul>
+<a class="btn" href="#contact">Enroll Now</a>
+</div>
+
+<div class="card course-card">
+<div class="course-tag">Class 12</div>
+<div class="subject-pill">Economics</div>
+<ul>
+<li>National Income</li>
+<li>Government Budget</li>
+<li>Balance of Payments</li>
+<li>Economic Policies</li>
+<li>Macroeconomics for Boards</li>
+</ul>
+<a class="btn" href="#contact">Enroll Now</a>
+</div>
+
+</div>
+
+</section>
+
+<section>
+<h2>Why Choose Us</h2>
+<div class="divider"></div>
+<div class="grid">
+<div class="card feature"><div><b>Small Batches</b><br>Max 10 students</div></div>
+<div class="card feature"><div><b>Personal Attention</b><br>Individual focus</div></div>
+<div class="card feature"><div><b>Concept-Based Teaching</b><br>No rote learning</div></div>
+<div class="card feature"><div><b>Regular Tracking</b><br>Weekly performance review</div></div>
+<div class="card feature"><div><b>Parent Interaction</b><br>Monthly updates</div></div>
+<div class="card feature"><div><b>Bilingual Teaching</b><br>English + Hindi</div></div>
+</div>
+</section>
+
+<section>
+<h2>Student Results</h2>
+<div class="divider"></div>
+
+<div class="carousel" id="testimonialCarousel">
+  <div class="carousel-track" id="carouselTrack">
+
+    <div class="carousel-item">
+      <div class="card testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial">"Improved from 65% to 88% in Accountancy – Class 12 student"</p>
+        <div class="t-meta">Class 12 • Accountancy</div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="card testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial">"Was scoring around 55 in Economics; improved to 82 after regular tests and clear explanations"</p>
+        <div class="t-meta">Class 12 • Economics</div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="card testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial">"Accounts felt very confusing earlier. After joining, entries and concepts became clear and I scored 90+"</p>
+        <div class="t-meta">Class 11 • Accountancy</div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="card testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial">"Ma’am explains in simple language and clears doubts patiently. My confidence improved a lot"</p>
+        <div class="t-meta">Class 11 • Economics</div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="card testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial">"I tried big coaching brands, but my concepts became clear here. Learning feels simple"</p>
+        <div class="t-meta">Class 12 • Accountancy</div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="card testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial">"Not just studies—helped me manage exam stress and boosted my confidence"</p>
+        <div class="t-meta">Class 11 • Student</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="carousel-dots" id="carouselDots"></div>
+
+</section>
+
+<script>
+let index = 0;
+const track = document.getElementById('carouselTrack');
+const items = track.children;
+const dotsWrap = document.getElementById('carouselDots');
+
+// create dots
+for(let i=0;i<items.length;i++){
+  const d = document.createElement('span');
+  d.onclick = ()=>{ index=i; updateCarousel(); };
+  dotsWrap.appendChild(d);
+}
+
+function updateDots(){
+  const dots = dotsWrap.children;
+  for(let i=0;i<dots.length;i++) dots[i].classList.remove('active');
+  dots[index].classList.add('active');
+}
+
+function updateCarousel(){
+  track.style.transform = 'translateX(-' + index * 100 + '%)';
+  updateDots();
+}
+
+function nextSlide(){ index = (index + 1) % items.length; updateCarousel(); }
+function prevSlide(){ index = (index - 1 + items.length) % items.length; updateCarousel(); }
+
+let auto = setInterval(nextSlide, 4000);
+const carousel = document.getElementById('testimonialCarousel');
+carousel.addEventListener('mouseenter', ()=>clearInterval(auto));
+carousel.addEventListener('mouseleave', ()=> auto = setInterval(nextSlide, 4000));
+
+updateCarousel();
+</script>
+
+<section id="pricing">
+<h2>Pricing</h2>
+<div class="divider"></div>
+<div class="grid">
+<div class="card">
+<span class="badge">Popular</span>
+<h3>Group Classes</h3>
+<p class="highlight">₹2,500 / month</p>
+<ul>
+<li>5 classes/week</li>
+<li>Doubt sessions</li>
+<li>Tests & assignments</li>
+<li>Past papers & strategy</li>
+</ul>
+</div>
+<div class="card">
+<h3>One-to-One</h3>
+<ul>
+<li>Personalized sessions</li>
+<li>Flexible schedule</li>
+<li>Custom learning plan</li>
+</ul>
+</div>
+</div>
+<p style="margin-top:20px"><b>Note:</b> Handwritten/PDF notes available separately. Contact mentor.</p>
+</section>
+
+<section>
+<div class="cta">
+<h2>Attend a Free Demo Class</h2>
+<p>Understand teaching style • Ask doubts • Experience real class</p>
+<a class="btn" href="#contact">Book Free Demo</a>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="divider"></div>
+
+<div class="contact-card">
+
+  <div class="contact-item">
+    <div class="contact-label">Call / WhatsApp</div>
+    <div class="contact-value"><a href="tel:+919910502275">+91 9910502275</a></div>
+  </div>
+
+  <div class="contact-divider"></div>
+
+  <div class="contact-item">
+    <div class="contact-label">Email</div>
+    <div class="contact-value"><a href="mailto:sejwalkomal22@gmail.com">sejwalkomal22@gmail.com</a></div>
+  </div>
+
+</div>
+
+<div style="margin-top:25px;text-align:center">
+  <a class="btn" href="tel:+919910502275">Call Now</a>
+  <a class="btn" href="https://wa.me/919910502275" target="_blank">WhatsApp</a>
+  <a class="btn" href="mailto:sejwalkomal22@gmail.com">Email</a>
+</div>
+</section>
+
+<footer>
+<p>Conceptual Studies | Accountancy & Economics Coaching (Class 11 & 12)</p>
+</footer>
+
+<div class="sticky-cta">
+<span>Limited seats – Only 10 students per batch</span>
+<a href="#contact">Book Demo</a>
+</div>
+
+<a class="whatsapp" href="https://wa.me/919910502275" target="_blank">Chat on WhatsApp</a>
+
+</body>
+</html>
